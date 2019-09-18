@@ -1,0 +1,9 @@
+hadoop jar /usr/local/hadoop/contrib/streaming/hadoop-streaming-1.2.1.jar \
+-mapper mapper_duration.py \
+-reducer reducer_duration.py \
+-input /storm \
+-output /storm/Storm_Duration \
+-file Downloads/mapper_duration.py \
+-file Downloads/reducer_duration.py 
+
+cat Downloads/test.csv | /home/group1/mapper_month.py | sort | /home/group1/reducer_month.py
